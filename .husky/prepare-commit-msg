@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+echo "Husky: Preparing commit message..."
+
+if [ -z "$CI" ]; then
+  # Si no se está ejecutando en un entorno de CI (GitHub Actions), ejecutar Commitizen
+  exec < /dev/tty && cz --hook || true
+else
+  # En entorno de CI, no realizar la ejecución de Commitizen
+  exit 0
+fi
