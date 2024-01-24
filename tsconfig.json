@@ -11,15 +11,14 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "paths": {
-      "@components/*": [
-        "src/presentation/components/*"
-      ],
-    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "skipLibCheck": true,
+    "noImplicitAny": true,
+    "types": ["node", "jest"]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "jest.config.js"],
   "exclude": ["node_modules"]
 }
+
+
