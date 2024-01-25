@@ -9,13 +9,19 @@ jest.mock('src/data/remote/news', () => ({
       hits: [{objectID: '1', title: 'Mock Title', author: 'Mock Author', url: 'Mock URL', created_at: 'Mock Date'}],
     }),
   ),
+}))
+jest.mock('src/domain/getNewsFormatted', () => ({
   getNewsFormatted: jest.fn(() => ({
-    id: '1',
+    id: 1,
     title: 'Mock Title',
     author: 'Mock Author',
     url: 'Mock URL',
     created_at: 'Mock Date',
   })),
+}))
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  getItem: jest.fn(() => Promise.resolve(null)),
+  setItem: jest.fn(() => Promise.resolve()),
 }))
 
 describe('useApiCall', () => {
@@ -26,14 +32,12 @@ describe('useApiCall', () => {
   it('fetches and displays news data correctly', async () => {
     const {result} = renderHook(() => useApiCall(mockRequestData))
     await waitFor(() => result.current.loading === false)
-    expect(result.current.data).toEqual([
-      {
-        id: 1,
-        title: 'Mock Title',
-        author: 'Mock Author',
-        url: 'Mock URL',
-        created_at: 'Mock Date',
-      },
-    ])
+    expect(result.current.data).toEqual({
+      id: 1,
+      title: 'Mock Title',
+      author: 'Mock Author',
+      url: 'Mock URL',
+      created_at: 'Mock Date',
+    })
   })
 })
