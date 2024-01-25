@@ -1,5 +1,25 @@
 # Semantic Versioning Changelog
 
+# [1.1.0](https://github.com/juandak16/HNMobile/compare/v1.0.0...v1.1.0) (2024-01-25)
+
+
+### Features
+
+* **hnmobile:** implement NewsList and NewsDetail screens, Navigation components and some tests ([3fba788](https://github.com/juandak16/HNMobile/commit/3fba788267bb55ec992f8b24cc81834320f44591))
+* **tests:** add new tests and readme ([082f5d1](https://github.com/juandak16/HNMobile/commit/082f5d145aef285a759c65d45fc1d623f3a2eb98))
+
+
+
+
+
+## [1.1.0](https://github.com/juandak16/HNMobile/compare/v1.0.0...v1.1.0) (2024-01-25)
+
+
+### Features
+
+* **hnmobile:** implement NewsList and NewsDetail screens, Navigation components and some tests ([3fba788](https://github.com/juandak16/HNMobile/commit/3fba788267bb55ec992f8b24cc81834320f44591))
+* **tests:** add new tests and readme ([082f5d1](https://github.com/juandak16/HNMobile/commit/082f5d145aef285a759c65d45fc1d623f3a2eb98))
+
 # 1.0.0 (2024-01-18)
 
 
