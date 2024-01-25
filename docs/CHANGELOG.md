@@ -1,5 +1,23 @@
 # Semantic Versioning Changelog
 
+# [1.2.0](https://github.com/juandak16/HNMobile/compare/v1.1.0...v1.2.0) (2024-01-25)
+
+
+### Features
+
+* **async-storage:** implement async storage ([09fec32](https://github.com/juandak16/HNMobile/commit/09fec325624f688ee88a8d8d8c6f4b0209ab7f03))
+
+
+
+
+
+## [1.2.0](https://github.com/juandak16/HNMobile/compare/v1.1.0...v1.2.0) (2024-01-25)
+
+
+### Features
+
+* **async-storage:** implement async storage ([09fec32](https://github.com/juandak16/HNMobile/commit/09fec325624f688ee88a8d8d8c6f4b0209ab7f03))
+
 # [1.1.0](https://github.com/juandak16/HNMobile/compare/v1.0.0...v1.1.0) (2024-01-25)
 
 
