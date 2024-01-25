@@ -15,7 +15,6 @@ export const getNews = async ({page, limit}: RequestData) => {
     const response = await fetch(endpoint)
 
     if (!response.ok) {
-      // Manejar el error HTTP, por ejemplo:
       throw new Error(`HTTP error! Status: ${response.status}`)
     }
 

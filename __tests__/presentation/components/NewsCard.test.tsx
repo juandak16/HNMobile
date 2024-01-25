@@ -13,15 +13,12 @@ jest.mock('src/domain/context/ThemeContext', () => ({
   }),
 }))
 
-// Mock dayjs y su extensión relativeTime
 jest.mock('dayjs', () => {
   const dayjs = jest.requireActual('dayjs')
   const relativeTime = jest.requireActual('dayjs/plugin/relativeTime')
 
-  // Extiende dayjs con relativeTime
   dayjs.extend(relativeTime)
 
-  // Mock dayjs.fromNow() para devolver un valor fijo
   dayjs.prototype.fromNow = jest.fn(() => '2 days ago')
 
   return dayjs

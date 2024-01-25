@@ -6,7 +6,7 @@ export type FormattedNews = {
   created_at: string
 }
 
-type NewsType = {
+export type NewsType = {
   hits: [
     {
       objectID: string

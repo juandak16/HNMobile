@@ -2,11 +2,11 @@ import {RouteProp} from '@react-navigation/native'
 import {NativeStackNavigationProp} from '@react-navigation/native-stack'
 import React, {useState} from 'react'
 import {ActivityIndicator, SafeAreaView, StyleSheet, View} from 'react-native'
-// import {WebView} from 'react-native-webview'
+import {WebView} from 'react-native-webview'
 import {StackParamList} from '../navigation/Navigation'
 import {useTheme} from 'src/domain/context/ThemeContext'
 
-type NewsDetailScreenRouteProp = RouteProp<StackParamList, 'NewsDetail'>
+export type NewsDetailScreenRouteProp = RouteProp<StackParamList, 'NewsDetail'>
 type NewsDetailScreenNavigationProp = NativeStackNavigationProp<StackParamList, 'NewsDetail'>
 
 type Props = {
@@ -17,7 +17,7 @@ type Props = {
 export default function NewsDetail({route}: Props) {
   const {colors} = useTheme()
   const [isLoading, setIsLoading] = useState(false)
-  const url = 'https://google.com/'
+  const url = route.params?.url
 
   const styles = StyleSheet.create({
     container: {
@@ -40,8 +40,8 @@ export default function NewsDetail({route}: Props) {
   }
   return (
     <SafeAreaView style={{flex: 1}}>
-      <View style={styles.container}>
-        {/* {isLoading ? (
+      <View style={styles.container} testID="web-view">
+        {isLoading ? (
           <ActivityIndicator size="large" style={styles.loader} color={colors.secondary} />
         ) : (
           <WebView
@@ -51,7 +51,7 @@ export default function NewsDetail({route}: Props) {
             onLoadStart={() => setIsLoading(true)}
             onLoadEnd={() => setIsLoading(false)}
           />
-        )} */}
+        )}
       </View>
     </SafeAreaView>
   )

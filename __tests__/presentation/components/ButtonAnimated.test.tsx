@@ -1,11 +1,9 @@
 import React from 'react'
 import {render, fireEvent} from '@testing-library/react-native'
 import {Animated} from 'react-native'
-import {RectButton} from 'react-native-gesture-handler'
 import {useTheme} from 'src/domain/context/ThemeContext'
 import ButtonAnimated from 'src/presentation/components/ButtonAnimated'
 
-// Mock dependencias
 jest.mock('src/domain/context/ThemeContext')
 jest.mock('react-native-gesture-handler', () => ({
   RectButton: jest.fn(({children, onPress}) => <button onClick={onPress}>{children}</button>),
@@ -13,7 +11,6 @@ jest.mock('react-native-gesture-handler', () => ({
 
 describe('ButtonAnimated', () => {
   beforeEach(() => {
-    // Configura mocks según sea necesario
     ;(useTheme as jest.Mock).mockReturnValue({
       colors: {
         buttonBackground: '#ed5c53',
@@ -45,11 +42,8 @@ describe('ButtonAnimated', () => {
         Test Button
       </ButtonAnimated>,
     )
-
-    // Simula una pulsación en el botón
     fireEvent.press(getByText('Test Button'))
 
-    // Verifica que la función onPressMock haya sido llamada
     expect(onPressMock).toHaveBeenCalled()
   })
 })
