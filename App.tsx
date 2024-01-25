@@ -1,37 +1,22 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import Label from 'src/presentation/components/Label'
 import React from 'react'
-import {SafeAreaView, StyleSheet, Text, useColorScheme} from 'react-native'
+import {NavigationContainer} from '@react-navigation/native'
+import {enableScreens} from 'react-native-screens'
+import {GestureHandlerRootView} from 'react-native-gesture-handler'
+import {ThemeProvider} from 'src/domain/context/ThemeContext'
+import Navigation from 'src/presentation/navigation/Navigation'
 
-import {Colors} from 'react-native/Libraries/NewAppScreen'
+enableScreens()
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark'
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  }
-
   return (
-    <SafeAreaView style={{...backgroundStyle, ...styles.content}}>
-      <Text>Hello world</Text>
-      <Label />
-    </SafeAreaView>
+    <ThemeProvider>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <NavigationContainer>
+          <Navigation />
+        </NavigationContainer>
+      </GestureHandlerRootView>
+    </ThemeProvider>
   )
 }
-
-const styles = StyleSheet.create({
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
 
 export default App
