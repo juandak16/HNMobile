@@ -6,7 +6,7 @@ export type RequestData = {
 }
 
 export const getEndpoint = ({page, limit}: RequestData) => {
-  return `${API_URL}&page=${page}&hitsPerPage=${limit}`
+  return `${API_URL}?query=mobile&page=${page}&hitsPerPage=${limit}`
 }
 
 export const getNews = async ({page, limit}: RequestData) => {

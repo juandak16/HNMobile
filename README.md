@@ -40,6 +40,8 @@ react-native run-android
 
 ## Running the Project
 
+Before running the project, ensure that you have reviewed and set the necessary environment variables.
+
 ```bash
 npm start # Iniciar la aplicación en modo desarrollo
 react-native run-ios # Ejecutar la aplicación en iOS
