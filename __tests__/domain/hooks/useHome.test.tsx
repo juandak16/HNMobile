@@ -17,6 +17,10 @@ jest.mock('src/domain/getNewsFormatted', () => ({
     created_at: 'Mock Date',
   })),
 }))
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  getItem: jest.fn(() => Promise.resolve(null)),
+  setItem: jest.fn(() => Promise.resolve()),
+}))
 
 describe('useHome', () => {
   it('fetches and displays news data correctly', async () => {

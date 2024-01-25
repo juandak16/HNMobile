@@ -22,6 +22,6 @@ describe('YourComponent', () => {
 
   it('returns correct endpoint', () => {
     const result = getEndpoint(mockRequestData)
-    expect(result).toBe('https://your-api-url.com&page=1&hitsPerPage=10')
+    expect(result).toBe('https://your-api-url.com?query=mobile&page=1&hitsPerPage=10')
   })
 })
