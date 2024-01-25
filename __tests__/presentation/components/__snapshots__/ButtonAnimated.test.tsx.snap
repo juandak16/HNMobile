@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonAnimated renders correctly 1`] = `
+<View
+  collapsable={false}
+  style={
+    {
+      "opacity": 1,
+      "transform": [
+        {
+          "translateX": 0,
+        },
+      ],
+    }
+  }
+>
+  <button
+    onClick={[MockFunction]}
+  >
+    <Text
+      collapsable={false}
+      style={
+        {
+          "color": "#FFFFFF",
+          "fontSize": 12,
+          "padding": 0,
+          "width": "100%",
+        }
+      }
+    >
+      Test Button
+    </Text>
+  </button>
+</View>
+`;
